@@ -1,0 +1,22 @@
+# TODO (Day 8): define the three services below.
+# TODO (Day 9): add a healthcheck to postgres and make etl wait for it.
+
+services:
+  postgres:
+    image: postgres:16
+    # env_file: ...
+    # volumes: ...
+    # healthcheck: ...
+
+  etl:
+    build: ./etl
+    # env_file: ...
+    # volumes: ./data mounted read-only
+    # depends_on: postgres healthy
+
+  adminer:
+    image: adminer
+    # ports: ...
+
+# volumes:
+#   pgdata:
